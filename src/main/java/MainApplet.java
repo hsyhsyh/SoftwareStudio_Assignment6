@@ -51,6 +51,23 @@ public class MainApplet extends PApplet{
 
 	private void loadData(){
 		
+		data = loadJSONObject(path + file);
+		nodes = data.getJSONArray("nodes");
+		links = data.getJSONArray("links");
+
+		System.out.println("Number of nodes: " + nodes.size());
+		System.out.println("Number of links: " + links.size());
+
+		for(int i=0; i<nodes.size(); i++){
+			JSONObject node = nodes.getJSONObject(i);
+			characters.add(new Character(this, node.getString("name"), random(100, 650), random(100, 650)));
+		}
+
+		for(int i=0; i<links.size(); i++){
+			JSONObject link = links.getJSONObject(i);
+			characters.get(link.getInt("source")).addTarget(characters.get(link.getInt("target")));
+		}
+		
 
 	}
 
