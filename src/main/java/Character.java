@@ -32,7 +32,7 @@ public class Character {
 		
 
 		
-		this.parent.stroke(255);
+		this.parent.noStroke();
 		this.parent.fill(2, 247, 141);
 		this.parent.ellipse(x,y,50,50);
 		
