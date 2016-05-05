@@ -30,13 +30,19 @@ public class Character {
 
 	public void display(){
 		
-		this.parent.noStroke();
+		this.parent.stroke(0);
+		this.parent.fill(255);
+		this.parent.ellipse(300, 300, 500, 500);
+		
+		this.parent.stroke(255);
 		this.parent.fill(2, 247, 141);
-		this.parent.rect(x-name.length()*10, y-20, name.length()*20, 40, 12, 12, 12, 12);
+		this.parent.ellipse(x,y,50,50);
 		
 		this.parent.textSize(26);
 		this.parent.fill(255);
-		this.parent.text(name, x-name.length()*10+5, y+10);
+		//this.parent.text(name, x-name.length()*10+5, y+10);
+		
+
 
 	}
 	
