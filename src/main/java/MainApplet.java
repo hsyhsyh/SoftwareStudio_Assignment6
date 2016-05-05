@@ -17,6 +17,9 @@ public class MainApplet extends PApplet{
 	JSONObject data;
 	JSONArray nodes, links;
 	private ArrayList<Character> characters;
+	private int radius=300;
+	private int circleX=330;
+	private int circleY=330;
 	
 	private final static int width = 1200, height = 650;
 	
@@ -34,7 +37,7 @@ public class MainApplet extends PApplet{
 		background(255);
         stroke(0);
         fill(255);
-        ellipse(300, 300, 500, 500);
+        ellipse(circleX, circleY, 2*radius, 2*radius);
 		
 		stroke(60, 119, 119);
 		strokeWeight(4);
@@ -61,10 +64,14 @@ public class MainApplet extends PApplet{
 
 		System.out.println("Number of nodes: " + nodes.size());
 		System.out.println("Number of links: " + links.size());
+		
+		int peopleNum=nodes.size();
+		
 
-		for(int i=0; i<nodes.size(); i++){
+		for(int i=0; i<peopleNum; i++){
 			JSONObject node = nodes.getJSONObject(i);
-			characters.add(new Character(this, node.getString("name"), random(100, 650), random(100, 650)));
+			double theta=i*2*Math.PI/peopleNum;
+			characters.add(new Character(this, node.getString("name"), (int)(circleX+radius*Math.cos(theta)), (int)(circleY+radius*Math.sin(theta))));
 		}
 
 		for(int i=0; i<links.size(); i++){

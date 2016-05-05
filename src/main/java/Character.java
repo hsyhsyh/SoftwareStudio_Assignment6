@@ -38,7 +38,7 @@ public class Character {
 		
 		this.parent.textSize(26);
 		this.parent.fill(255);
-		//this.parent.text(name, x-name.length()*10+5, y+10);
+		this.parent.text(name, x-name.length()*10+5, y+10);
 		
 
 
