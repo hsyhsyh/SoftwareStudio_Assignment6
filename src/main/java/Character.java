@@ -1,5 +1,7 @@
 package main.java;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -8,14 +10,18 @@ import processing.core.PApplet;
 * This class is used to store states of the characters in the program.
 * You will need to declare other variables depending on your implementation.
 */
-public class Character {
+public class Character implements MouseMotionListener{
 	
 	private PApplet parent;
 	public float x, y, radius;
 	private String name;
 	private ArrayList<Character> targets;
+	private int mouseCenterX;
+	private int mouseCenterY;
 
 	public Character(PApplet parent, String name, float x, float y){
+		
+		parent.addMouseMotionListener(this);
 
 		this.parent = parent;
 		this.name = name;
@@ -47,5 +53,30 @@ public class Character {
     public void addTarget(Character target){ this.targets.add(target); }
 	
 	public ArrayList<Character> getTargets(){ return this.targets; }
+	
+	public int getCenterX(int mouseX) {
+		// TODO Input mouse X position
+		return mouseX;
+	}
+	
+	public int getCenterY(int mouseY) {
+		// TODO Input mouse Y position
+		return mouseY;
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		this.x = this.getCenterX(e.getX());
+		this.y = this.getCenterY(e.getY());
+		System.out.println("test");
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
