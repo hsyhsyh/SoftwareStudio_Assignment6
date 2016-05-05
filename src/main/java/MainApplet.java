@@ -30,7 +30,11 @@ public class MainApplet extends PApplet{
 	}
 
 	public void draw() {
-        background(255);
+		
+		background(255);
+        stroke(0);
+        fill(255);
+        ellipse(300, 300, 500, 500);
 		
 		stroke(60, 119, 119);
 		strokeWeight(4);

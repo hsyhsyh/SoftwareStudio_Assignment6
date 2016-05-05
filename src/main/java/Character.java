@@ -30,9 +30,7 @@ public class Character {
 
 	public void display(){
 		
-		this.parent.stroke(0);
-		this.parent.fill(255);
-		this.parent.ellipse(300, 300, 500, 500);
+
 		
 		this.parent.stroke(255);
 		this.parent.fill(2, 247, 141);
