@@ -10,12 +10,12 @@ import processing.core.PApplet;
 */
 public class Character {
 	
-	private MainApplet parent;
+	private PApplet parent;
 	public float x, y, radius;
 	private String name;
 	private ArrayList<Character> targets;
 
-	public Character(MainApplet parent){
+	public Character(PApplet parent, String name, float x, float y){
 
 		this.parent = parent;
 		this.name = name;
