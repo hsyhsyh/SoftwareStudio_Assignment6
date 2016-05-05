@@ -67,9 +67,11 @@ public class Character implements MouseMotionListener{
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
+		if((x-getCenterX(e.getX()))*(x-getCenterX(e.getX())) + (y-getCenterY(e.getY()))*(y-getCenterY(e.getY())) < 100) {
 		this.x = this.getCenterX(e.getX());
 		this.y = this.getCenterY(e.getY());
 		System.out.println("test");
+		}
 		
 	}
 
