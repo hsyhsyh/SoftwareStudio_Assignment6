@@ -2,6 +2,7 @@ package main.java;
 
 import java.util.ArrayList;
 
+import controlP5.ControlP5;
 import processing.core.PApplet;
 import processing.data.JSONArray;
 import processing.data.JSONObject;
@@ -12,6 +13,7 @@ import processing.data.JSONObject;
 */
 @SuppressWarnings("serial")
 public class MainApplet extends PApplet{
+	private ControlP5 cp5;
 	private String path = "main/resources/";
 	private String file = "starwars-episode-1-interactions.json";
 	JSONObject data;
@@ -31,6 +33,13 @@ public class MainApplet extends PApplet{
 		characters = new ArrayList<Character>();
 		loadData();
 		smooth();
+		cp5 = new ControlP5(this);
+		cp5.addButton("reset").setLabel("Reset")
+		                      .setPosition(1080,10)
+		                      .setSize(100, 50);
+		cp5.addButton("add").setLabel("Add All")
+                              .setPosition(1080,70)
+                              .setSize(100, 50);
 		
 	}
 
