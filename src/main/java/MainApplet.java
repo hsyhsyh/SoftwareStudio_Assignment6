@@ -87,7 +87,6 @@ public class MainApplet extends PApplet{
 					curve(character.x, character.y, character.x, character.y, (character.x+2*circleX)/3, (character.y+2*circleY)/3, (target.x+2*circleX)/3, (target.y+2*circleX)/3);
 			        curve(character.x, character.y, (character.x+2*circleX)/3, (character.y+2*circleY)/3, (target.x+2*circleX)/3, (target.y+2*circleX)/3, target.x, target.y);
 			        curve((character.x+2*circleX)/3, (character.y+2*circleY)/3, (target.x+2*circleX)/3, (target.y+2*circleX)/3, target.x, target.y, target.x, target.y);
-			      //line(character.x, character.y, target.x, target.y);
 				}
 			        
 		}
@@ -139,8 +138,71 @@ public class MainApplet extends PApplet{
 				j+=60;
 			}
 			else i+=60;
-		}
-			
+		}	
+	}
+	
+	public void episode1() {
+		file = "starwars-episode-1-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
+	}
+	public void episode2() {
+		file = "starwars-episode-2-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
+	}
+	public void episode3() {
+		file = "starwars-episode-3-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
+	}
+	public void episode4() {
+		file = "starwars-episode-4-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
+	}
+	public void episode5() {
+		file = "starwars-episode-5-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
+	}
+	public void episode6() {
+		file = "starwars-episode-6-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
+	}
+	public void episode7() {
+		file = "starwars-episode-7-interactions.json";
+		data = null;
+		nodes = null;
+		links = null;
+		characters = new ArrayList<Character>();
+		PeopleinsideCirCle = 0;
+		loadData();
 	}
 	
 	public void add(){
