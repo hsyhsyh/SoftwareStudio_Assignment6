@@ -39,7 +39,7 @@ public class Character implements MouseMotionListener{
 
 		
 		this.parent.noStroke();
-		this.parent.fill(2, 247, 141);
+		this.parent.fill(255, 100, 0);
 		this.parent.ellipse(x,y,50,50);
 		
 		this.parent.textSize(26);
@@ -67,7 +67,7 @@ public class Character implements MouseMotionListener{
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if((x-getCenterX(e.getX()))*(x-getCenterX(e.getX())) + (y-getCenterY(e.getY()))*(y-getCenterY(e.getY())) < 100) {
+		if((x-getCenterX(e.getX()))*(x-getCenterX(e.getX())) + (y-getCenterY(e.getY()))*(y-getCenterY(e.getY())) < 400) {
 		this.x = this.getCenterX(e.getX());
 		this.y = this.getCenterY(e.getY());
 		System.out.println("test");

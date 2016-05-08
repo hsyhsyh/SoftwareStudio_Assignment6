@@ -45,16 +45,24 @@ public class MainApplet extends PApplet{
 
 	public void draw() {
 		
-		background(255);
+		background(105,227,241);
         stroke(0);
-        fill(255);
+        fill(107,239,164);
         ellipse(circleX, circleY, 2*radius, 2*radius);
 		
+        noFill();
 		stroke(60, 119, 119);
-		strokeWeight(4);
+		strokeWeight(3);
 		for(Character character: this.characters){
 			for(Character target: character.getTargets())
-				line(character.x, character.y, target.x, target.y);
+				if((character.x-circleX)*(character.x-circleX)+(character.y-circleY)*(character.y-circleY)<=(radius+1)*(radius+1)
+				    &&(target.x-circleX)*(target.x-circleX)+(target.y-circleY)*(target.y-circleY)<=(radius+1)*(radius+1)) {
+					curve(character.x, character.y, character.x, character.y, (character.x+2*circleX)/3, (character.y+2*circleY)/3, (target.x+2*circleX)/3, (target.y+2*circleX)/3);
+			        curve(character.x, character.y, (character.x+2*circleX)/3, (character.y+2*circleY)/3, (target.x+2*circleX)/3, (target.y+2*circleX)/3, target.x, target.y);
+			        curve((character.x+2*circleX)/3, (character.y+2*circleY)/3, (target.x+2*circleX)/3, (target.y+2*circleX)/3, target.x, target.y, target.x, target.y);
+			      //line(character.x, character.y, target.x, target.y);
+				}
+			        
 		}
 		
 		for(Character character: this.characters)
@@ -91,6 +99,33 @@ public class MainApplet extends PApplet{
 		}
 		
 
+	}
+	
+	public void reset(){
+		int i=0;
+		int j=0;
+		for(Character character: this.characters){
+			character.x=1000-j;
+			character.y=50+i;
+			if(i==540){
+				i=0;
+				j+=60;
+			}
+			else i+=60;
+		}
+			
+	}
+	
+	public void add(){
+		int peopleNum=nodes.size();
+		double theta=0;
+		for(Character character: this.characters){
+			character.x=(int)(circleX+radius*Math.cos(theta));
+			character.y=(int)(circleY+radius*Math.sin(theta));
+			theta+=2*Math.PI/peopleNum;
+
+		}
+		
 	}
 
 }
