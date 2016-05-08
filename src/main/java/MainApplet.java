@@ -41,6 +41,14 @@ public class MainApplet extends PApplet{
 		cp5.addButton("add").setLabel("Add All")
                               .setPosition(1080,70)
                               .setSize(100, 50);
+		int i,j=0;
+		for(i=1;i<=7;i++)
+		{
+			cp5.addButton("episode"+i).setLabel("episode"+i)
+			                          .setPosition(1080,200+j)
+                                      .setSize(100, 50);
+			j+=60;
+		}
 		
 	}
 
