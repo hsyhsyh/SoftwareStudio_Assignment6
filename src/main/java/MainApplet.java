@@ -22,6 +22,7 @@ public class MainApplet extends PApplet{
 	private int radius=300;
 	private int circleX=330;
 	private int circleY=330;
+	private int PeopleinsideCirCle;
 	
 	private final static int width = 1200, height = 650;
 	
@@ -49,6 +50,24 @@ public class MainApplet extends PApplet{
         stroke(0);
         fill(107,239,164);
         ellipse(circleX, circleY, 2*radius, 2*radius);
+        
+        if(!this.mousePressed){
+        	PeopleinsideCirCle=0;
+        	for(Character character: this.characters){
+        		if((character.x-circleX)*(character.x-circleX)+(character.y-circleY)*(character.y-circleY)<=(radius+5)*(radius+5))
+        			PeopleinsideCirCle++;
+        	}
+        	if(PeopleinsideCirCle>0){
+        		double theta=2*Math.PI/PeopleinsideCirCle;
+        		for(Character character: this.characters){
+        			if((character.x-circleX)*(character.x-circleX)+(character.y-circleY)*(character.y-circleY)<=(radius+5)*(radius+5)){
+        			character.x=(int)(circleX+radius*Math.cos(theta));
+        			character.y=(int)(circleY+radius*Math.sin(theta));
+        			theta+=2*Math.PI/PeopleinsideCirCle;
+        			}
+        		}
+        	}
+        }
 		
         noFill();
 		stroke(60, 119, 119);
