@@ -70,7 +70,6 @@ public class Character implements MouseMotionListener{
 		if((x-getCenterX(e.getX()))*(x-getCenterX(e.getX())) + (y-getCenterY(e.getY()))*(y-getCenterY(e.getY())) < 400) {
 		this.x = this.getCenterX(e.getX());
 		this.y = this.getCenterY(e.getY());
-		System.out.println("test");
 		}
 		
 	}

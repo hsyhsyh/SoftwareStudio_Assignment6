@@ -127,6 +127,8 @@ public class MainApplet extends PApplet{
 
 	}
 	
+	
+	//Write the function of button
 	public void reset(){
 		int i=0;
 		int j=0;

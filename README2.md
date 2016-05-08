@@ -1,20 +1,4 @@
-# Software Studio Assignment 6
-
-## Notes
-+ You will have to import the libraries on your own. All the libraries are provided on iLMS.
-+ Even you followed the design TA shown in the video, you still have to explain the control of the program in the next section.
-
-## Explanation of the Design
-Explain your design in this section.  
-Example:
-### Operation
-+ Clicking on the button "Add All": users can add all the characters into network to be analyzed.
-+ Clicking on the button "Clear": users can remove all the characters from network.
-+ Hovering on the character: the name of the character will be revealed.
-+ By dragging the little circle and drop it in the big circle, the character will be added to the network.
-+ By pressing key 1~7 on the keyboard, users can switch between episodes.
-+ ...etc.
-
-### Visualization
-+ The width of each link is visualized based on the value of the link.
-+ ...etc.
+我們的程式右邊有「episode」七個按鈕，可以按「episode」來切換集數。
+按「reset」按鈕可以讓人物排在右邊，
+按「add all」按鈕可以讓人物全部加到圓上，
+可以使用滑鼠拖曳人物，拖進圓內時，程式會自動將角色整齊排列在圓上。
